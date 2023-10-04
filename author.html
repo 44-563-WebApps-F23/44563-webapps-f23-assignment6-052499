@@ -70,20 +70,20 @@ function checkAuthor (){
             }
         }
         var good = 0;
-    var oops = 0;
-    function checkAuthor() {
-        var secretAuthor = document.getElementById("secretAuthor").value;
-        var guessAuthor = document.getElementById("guessAuthor").value;
-        var resultElement = document.getElementById("result");
-        if (guessAuthor === secretAuthor) {
-            good++;
-            alert("You got it right!");
-        } else {
-            oops++;
-            alert("Sorry!");
-        }
-        resultElement.innerHTML = "Good: " + good + ", Oops: " + oops;
-    }
+        var oops = 0;
+        function checkAuthor() {
+             var secretAuthor = document.getElementById("secretAuthor").value;
+             var guessAuthor = document.getElementById("guessAuthor").value;
+             var resultElement = document.getElementById("result");
+                 if (guessAuthor === secretAuthor) {
+                   good++;
+                     alert("You got it right!");
+                } else {
+                   oops++;
+                      alert("Sorry!");
+                }
+                    resultElement.innerHTML = "Good: " + good + ", Oops: " + oops;
+                }
 </script>
 </body>
 </html> 
