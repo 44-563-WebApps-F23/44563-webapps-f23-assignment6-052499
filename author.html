@@ -43,43 +43,29 @@ function checkAuthor (){
     document.getElementById('oops_count').innerHTML = oops;
 }
 </script>
-<script>
-        
-    var good = 0;
-    var oops = 0;
-    var incorrectGuessCount = 0;
-
-   
-    function checkAuthor() {
-        var secretAuthorInput = document.getElementById("secretAuthor");
-        var guessAuthorInput = document.getElementById("guessAuthor");
-        var resultElement = document.getElementById("result");
-        var incorrectGuessesElement = document.getElementById("incorrectGuesses");
-
-        var secretAuthor = secretAuthorInput.value;
-        var guessAuthor = guessAuthorInput.value;
-
-        if (secretAuthor === guessAuthor) {
-            good++;
-            alert("You got it right!");
-        } else {
-            oops++;
-            incorrectGuessCount++;
-
-            
-            if (incorrectGuessCount <= 7) {
-                incorrectGuessesElement.innerHTML += `<div class="alert alert-danger">Incorrect guess #${incorrectGuessCount}: ${guessAuthor}</div>`;
+<script> 
+    let good=0;
+    let oops=0;
+    function checkAuthor (){
+       
+        hidden = document.getElementById("hideAuthor").value;
+            guess = document.getElementById("guessAuthor").value;
+    
+            out = document.getElementById("result");
+            if (hidden == guess) {
+              good++;
+              alert("You got it right");
+              out.innerHTML = "Results: Good-" + good + ", Oops-" + oops;
             } else {
-                // After 7 incorrect guesses, disable the button and show an alert
-                document.getElementById("guessAuthor").disabled = true;
-                document.querySelector('button').setAttribute('onclick', 'alert("Sorry, ran out of guesses.")');
+              oops++;
+              alert("Sorry");
+              out.innerHTML = "Results: Good-" + good + ",Oops-" + oops;
             }
-        }
+          }
+    
+    
+    </script>
 
-        // Update the result element
-        resultElement.textContent = "Good: " + good + ", Oops: " + oops;
-    }
-</script>
 <div id="imageContainer">
     <img id="displayedImage" src="Paris.jpg" alt="Image" width="100" height="100" onclick="selectImage()">
     </div>
@@ -108,10 +94,7 @@ function checkAuthor (){
     
     
     
-    <!-- Add Bootstrap JS and Popper.js (required for Bootstrap) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
     
 
 </script>
