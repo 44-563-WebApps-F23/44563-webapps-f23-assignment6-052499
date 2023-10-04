@@ -42,28 +42,33 @@ function checkAuthor (){
     document.getElementById('good_count').innerHTML = good;
     document.getElementById('oops_count').innerHTML = oops;
 }
+</script>
 
-let useImage = 1;
-      function selectImage()
-{
-    switch(useImage)
-    {
-        case 1: var img = document.getElementById('imageSwitch');
-                img.src='Amsterdam.jpg';
-                useImage=2;
-                break;
-        case 2: var img = document.getElementById('imageSwitch');
-                img.src='Paris.jpg';
-                useImage=3;
-                break;
-        case 3: var img = document.getElementById('imageSwitch');
-                img.src='Rome.jpg';
-                console.log(useImage);
-                useImage=1;
-                break;
-    }
-}
-    </script>
-  
+<div id="imageContainer">
+    <img id="displayedImage" src="ParisImage.jpg" alt="Image" width="100" height="100" onclick="selectImage()">
+    </div>
+    <script>
+        var useImage = 1;
+        function selectImage() {
+            var imageElement = document.getElementById("displayedImage");
+            switch (useImage) {
+                case 1:
+                    imageElement.src = "Amsterdam.jpg";
+                    useImage = 2;
+                    break;
+                case 2:
+                    imageElement.src = "Rome.jpg";
+                    useImage = 3;
+                    break;
+                case 3:
+                    imageElement.src = "Paris.jpg";
+                    useImage = 1;
+                    break;
+                default:
+                    imageElement.src = "Paris.jpg";
+                    useImage = 1;
+            }
+        }
+</script>
 </body>
 </html> 
