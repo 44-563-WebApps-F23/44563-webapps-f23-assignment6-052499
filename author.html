@@ -33,12 +33,21 @@
            good++;
            alert("you got it right");
         } else {
-            oops++;
-            alert("sorry");
+        oops++
+        if(oops<= 7){
+            alert('Sorry')}
+        else{
+           document.getElementById("button_guess").onclick = ranOutOfGuesses();
+           
         }
-        document.getElementById('good_count').innerHTML = good;
-        document.getElementById('oops_count').innerHTML = oops;
+        out.innerHTML="Results: Good-"+good+",Oops-"+oops
+        
     }
+    
+}
+function ranOutOfGuesses(){
+  alert("Sorry, ran out of guesses.");
+}
     
     </script> 
 
