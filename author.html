@@ -42,11 +42,13 @@
         }
         out.innerHTML="Results: Good-"+good+",Oops-"+oops
         
-    }
-    
+    }  
 }
 function ranOutOfGuesses(){
   alert("Sorry, ran out of guesses.");
+  
+    document.getElementById('good_count').innerHTML = good;
+    document.getElementById('oops_count').innerHTML = oops;
 }
     
     </script> 
